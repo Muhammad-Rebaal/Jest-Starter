@@ -1,10 +1,7 @@
- import './script2'; // Must be imported before the tested file
+const getPeople = require('./script2');
 
-
-describe('./script2', () => {
-    it('the data is peanut butter', () => {
-        return fetchData().then(data => {
-          expect(data).toBe('peanut butter');
-        });
-      });
+test('fetch people', async () => {
+    const result = await getPeople();
+    console.log(result);
+    expect(result).toBeDefined();
 });
